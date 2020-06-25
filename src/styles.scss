@@ -1,0 +1,123 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import './assets/style.css';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$medicapp-primary: mat-palette($mat-indigo);
+$medicapp-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$medicapp-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$medicapp-theme: mat-light-theme($medicapp-primary, $medicapp-accent, $medicapp-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($medicapp-theme);
+
+/* You can add global styles to this file, and also import other style files */
+$white : #fff;
+$blue : #309EEE;
+*{
+    box-sizing: border-box;
+}
+html, body { height: 100%; }
+body { 
+    background: #F6FDFF;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    section{
+        display: grid;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        padding: 0 15px;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 150px;
+        padding-bottom: 30px;
+    }
+    app-home{
+        display: grid;
+    }
+}
+
+.primary-button{
+    background: $blue;
+    color: $white;
+    height: 50px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 15px;
+    border-radius: 25px;
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary{
+    background: $blue;
+    background: $blue;
+    color: $white;
+    height: 50px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+.mat-raised-button:not([class*=mat-elevation-z]){
+    box-shadow: none;
+}
+.mat-raised-button:not([disabled]):active:not([class*=mat-elevation-z]){
+    box-shadow: 0px 4px 15px rgba(179, 202, 216, 0.56);
+}
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent{
+    background: #B5E0FF;
+    color: $blue;
+    border-radius: 30px;
+    height: 50px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 25px;
+    font-weight: 500
+}
+
+//input 
+.mat-form-field-appearance-fill .mat-form-field-flex{
+    background: transparent;
+}
+.mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex{
+    background: transparent;
+}
+// table
+table.mat-table{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(179, 202, 216, 0.56);
+    border-radius: 5px;
+    overflow: hidden;
+}

@@ -1,0 +1,172 @@
+.consulta{
+    padding-top: 180px;
+    padding-bottom: 60px;
+    height: auto;
+
+    &__step{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+        
+        &__card{
+            min-height: 150px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 15px rgba(179, 202, 216, 0.56);
+            border-radius: 5px;
+            text-align: center;
+            padding-top: 30px;
+            &__image{
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+    }
+    &__stepSpecialty{
+        display: grid;
+        grid-gap: 15px;
+        grid-template-rows: 150px auto 70px 70px;
+        
+        &__specialtyImage{
+            justify-self: center;
+            height: 100px;
+            width: 100px;
+        }
+        
+        &__content {
+            background: #FFFFFF;
+            box-shadow: 0px 4px 15px rgba(179, 202, 216, 0.56);
+            border-radius: 5px;
+            color: #4E4E4E;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            padding: 30px 25px;
+        }
+
+        &__button{
+            margin: 0 auto;
+        }
+
+    }
+    &__stepDate{
+        display: grid;
+        grid-template-rows: auto 70px 70px;
+        .mat-form-field{
+            justify-self: left;
+        }
+
+        &__list{
+            list-style: none;
+            margin-top: 0;
+            padding-left: 0;
+            &__item{
+                background: #FFFFFF;
+                box-shadow: 0px 4px 15px rgba(179, 202, 216, 0.56);
+                border-radius: 5px;
+                width: 100%;
+                height: 60px;
+                margin-bottom: 25px;
+                padding-top: 20px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 21px;
+                text-align: center;
+
+                color: #717171;
+
+                &--active{
+                    background: #B5E0FF;
+                    box-shadow: 0px 4px 15px rgba(179, 202, 216, 0.56);
+                    border-radius: 5px;
+                    color: #309EEE;
+                }
+            }
+        }
+
+        &__button{
+            margin: 0 auto;
+        }
+    }
+    &__stepSummary{
+        display: grid;
+        grid-template-rows: auto 70px 70px;
+        
+        &__content{
+            background: #FFFFFF;
+            box-shadow: 0px 4px 15px rgba(179, 202, 216, 0.56);
+            border-radius: 5px;
+            align-self: center;
+            padding: 20px;
+
+        }
+        &__button{
+            margin: 0 auto;
+        }
+    }
+    &__stepFinis{
+        display: grid;
+        grid-template-rows: auto 70px 70px;
+
+        &__image{
+            align-self: center;
+            justify-self: center;
+            height: 170px;
+            width: 170px;
+        }
+
+        &__button{
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (min-width: 1152px) {
+    .consulta{
+        &__step{
+            max-width: 1240px;
+            margin: 0 auto;
+            width: 100%;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 155px);
+            &__card{
+                height: 150px;
+            }
+        }
+
+        &__stepSpecialty{
+            max-width: 600px;
+            margin:  0 auto;
+            &__content {
+                margin-bottom: 100px;
+            }
+
+            &__specialtyImage{
+                align-self: center;
+            }
+        }
+        &__stepDate{
+            max-width: 360px;
+            width: 100%;
+            justify-self: center;
+        }
+
+        &__stepSummary{
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+
+            &__content{
+                display: grid;
+                justify-items: center;
+                padding: 50px;
+
+                .mat-form-field{
+                    width: 200px;
+                }
+            }
+        }
+    }
+}

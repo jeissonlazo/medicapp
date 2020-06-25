@@ -1,0 +1,45 @@
+<section class="cita">
+    <div class="cita__step" *ngIf="show == 1">
+        <mat-form-field>
+            <mat-label>Fecha selecionada</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="day" (opened)="true">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button class="cita__step__button"color="primary" (click)="plus()">Continuar</button>
+    </div>
+    <div class="cita__step" *ngIf="show == 2">
+        <mat-form-field class="example-full-width">
+            <mat-label>Hora</mat-label>
+            <input matInput placeholder="Ex. Pizza" [ngxTimepicker]="with5Gap" [(ngModel)]="hour">
+            <ngx-material-timepicker #with5Gap [minutesGap]="5"></ngx-material-timepicker>
+        </mat-form-field>
+        <button mat-raised-button class="cita__step__button"color="primary" (click)="plus()">Continuar</button>
+        <button mat-raised-button class="cita__step__button"color="accent" (click)="subtract()">Atras</button>
+    </div>
+    <div class="cita__step" *ngIf="show == 3">
+        <div class="cita__summary">
+            <div class="cita__summary__content">
+                <mat-form-field>
+                    <mat-label>Fecha selecionada</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="day" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                        <mat-icon matDatepickerToggleIcon></mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Hora</mat-label>
+                    <input matInput placeholder="Ex. Pizza" [ngxTimepicker]="with5Gap" [(ngModel)]="hour" disabled>
+                    <ngx-material-timepicker #with5Gap [minutesGap]="5"></ngx-material-timepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" (click)="plus()">Confirmar cita</button>
+        <button mat-raised-button color="accent" (click)="subtract()">Atras</button>
+    </div>
+    <div class="cita__step" *ngIf="show == 4">
+        <img class="cita__step__image" src="../../../assets/images/like.png">
+        <a mat-raised-button color="primary" routerLink="/" style="padding-top: 10px;">Finalizar</a>
+    </div>
+</section>

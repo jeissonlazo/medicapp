@@ -1,0 +1,51 @@
+$white : #fff;
+$blue : #309EEE;
+header{
+    background: $blue;
+    height: 150px;
+    color: $white;
+    display: grid;
+    position: relative;
+    z-index: 2;
+    .container{
+        display: grid;
+        align-self: end;
+        padding: 0 15px;
+        h4{
+            text-align: center;
+            margin: 0;
+            font-size: 18px;
+        }
+        h5{
+            text-align: center;
+            font-size: 14px;
+            font-weight: lighter;
+        }
+        span{
+            position: absolute;
+            align-self: center;
+            left: 15px;
+        }
+    }
+    a{
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 1152px) {
+  
+    header{
+        .container{
+            h4{
+                text-align: left;
+                padding-left: 30px;
+            }
+
+            h5{
+                text-align: left;
+                padding-left: 30px;
+            }
+        }
+    }
+}
